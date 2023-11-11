@@ -1,5 +1,4 @@
 import React from 'react';
-import './KeysStyles.css';
 import { Button, Card, Divider, Flex, Input, Typography } from 'antd';
 import { KeyOutlined } from '@ant-design/icons';
 import { generateKey } from '../../services/keyGen';
@@ -20,7 +19,7 @@ const Keys: React.FC<KeysProps> = ({ key1 = '', key2 = '', setKey1 = () => { }, 
     return (
         <Card
             title='Encryption keys'
-            className='card keys'
+            className='keys-card'
             extra={
                 <KeyOutlined
                     style={{ marginLeft: '20px' }}

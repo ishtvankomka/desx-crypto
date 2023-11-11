@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './CryptoCardStyles.css';
 import { Button, Card, Collapse, Flex, Input, Typography } from 'antd';
 import { LockOutlined, UnlockOutlined } from '@ant-design/icons';
 import { desx } from '../../services/desxCrypto';
@@ -42,7 +41,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({ title = '', lock = false, key1 
     return (
         <Card
             title={`DESX ${title}`}
-            className='card crypto'
+            className='crypto-card'
             extra={
                 lock ?
                     <LockOutlined />
