@@ -3,7 +3,7 @@ import './CryptoCardStyles.css';
 import { Button, Card, Collapse, Flex, Input, Typography } from 'antd';
 import { LockOutlined, UnlockOutlined } from '@ant-design/icons';
 import { desx } from '../../services/desxCrypto';
-import { bytesToString, stringToBytes } from '../../helpers/bytes';
+import { bytesToString, stringToBytes, stringToBytesFormatted } from '../../helpers/bytes';
 
 const { Text } = Typography;
 const { TextArea } = Input;
@@ -19,13 +19,13 @@ const CryptoCard: React.FC<CryptoCardProps> = ({ title = '', lock = false, key1 
     const [inputText, setInputText] = useState('')
     const [inputBytes, setInputBytes] = useState('')
     useEffect(() => {
-        setInputBytes(String(stringToBytes(inputText)))
+        setInputBytes(String(stringToBytesFormatted(inputText)))
     }, [inputText])
 
     const [outputText, setOutputText] = useState('')
     const [outputBytes, setOutputBytes] = useState('')
     useEffect(() => {
-        setOutputBytes(String(stringToBytes(outputText)))
+        setOutputBytes(String(stringToBytesFormatted(outputText)))
     }, [outputText])
 
 
