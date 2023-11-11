@@ -5,19 +5,19 @@
   @media (min-width: 1000px) {
     width: 900px;
     flex-direction: row;
-  }
+  };
 }
 
 .keys-card {
   width: 280px;
   @media (min-width: 1000px) {
     width: 900px !important;
-  }
+  };
 }
 
 .crypto-card {
   width: 280px;
   @media (min-width: 1000px) {
     width: 440px !important;
-  }
+  };
 }
