@@ -20,7 +20,7 @@ const Keys: React.FC<KeysProps> = ({ key1 = '', key2 = '', setKey1 = () => { }, 
     return (
         <Card
             title='Encryption keys'
-            className='keys-card'
+            className='card keys-card'
             extra={
                 <KeyOutlined
                     style={{ marginLeft: '20px' }}

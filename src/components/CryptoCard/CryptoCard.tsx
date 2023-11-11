@@ -42,7 +42,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({ title = '', lock = false, key1 
     return (
         <Card
             title={`DESX ${title}`}
-            className='crypto-card'
+            className='card crypto-card'
             extra={
                 lock ?
                     <LockOutlined />
