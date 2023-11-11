@@ -39,84 +39,86 @@ const CryptoCard: React.FC<CryptoCardProps> = ({ title = '', lock = false, key1 
 
 
     return (
-        <Card
-            title={`DESX ${title}`}
-            className='crypto-card'
-            extra={
-                lock ?
-                    <LockOutlined />
-                    :
-                    <UnlockOutlined />
-            }
-        >
-            <Flex vertical gap='large'>
-                <Flex vertical gap='small'>
-                    <Text strong>Input text</Text>
-                    <TextArea
-                        placeholder={`Enter text to ${title}`}
-                        autoSize={{ minRows: 6, maxRows: 6 }}
-                        value={inputText}
-                        onChange={(e) => setInputText(e.target.value)}
-                    />
-                </Flex>
-                <Collapse
-                    items={[{
-                        key: '1',
-                        label: 'Bytes (input)',
-                        children: (
-                            <TextArea
-                                autoSize={{ minRows: 6, maxRows: 6 }}
-                                disabled
-                                style={{ cursor: 'auto' }}
-                                value={inputBytes}
-                            />
-                        )
-                    }]}
-                />
-                <Button
-                    type='primary'
-                    onClick={handleDesx}
-                    disabled={!(inputText.length && key1.length && key2.length)}
-                >
-                    {title}
-                </Button>
-                <Flex vertical gap='middle'>
-                    <Flex>
-                        <Text strong>Output text</Text>
-                        <Button
-                            type='default'
-                            size='small'
-                            onClick={handleCopyToClipboard}
-                            disabled={!(outputText.length)}
-                            style={{ marginLeft: '20px' }}
-                        >
-                            Copy
-                        </Button>
+        <div className='crypto-card'>
+            <Card
+                style={{ width: '100%' }}
+                title={`DESX ${title}`}
+                extra={
+                    lock ?
+                        <LockOutlined />
+                        :
+                        <UnlockOutlined />
+                }
+            >
+                <Flex vertical gap='large'>
+                    <Flex vertical gap='small'>
+                        <Text strong>Input text</Text>
+                        <TextArea
+                            placeholder={`Enter text to ${title}`}
+                            autoSize={{ minRows: 6, maxRows: 6 }}
+                            value={inputText}
+                            onChange={(e) => setInputText(e.target.value)}
+                        />
                     </Flex>
-                    <TextArea
-                        autoSize={{ minRows: 6, maxRows: 6 }}
-                        disabled
-                        style={{ cursor: 'pointer' }}
-                        value={outputText}
-                        onChange={(e) => setOutputText(e.target.value)}
+                    <Collapse
+                        items={[{
+                            key: '1',
+                            label: 'Bytes (input)',
+                            children: (
+                                <TextArea
+                                    autoSize={{ minRows: 6, maxRows: 6 }}
+                                    disabled
+                                    style={{ cursor: 'auto' }}
+                                    value={inputBytes}
+                                />
+                            )
+                        }]}
+                    />
+                    <Button
+                        type='primary'
+                        onClick={handleDesx}
+                        disabled={!(inputText.length && key1.length && key2.length)}
+                    >
+                        {title}
+                    </Button>
+                    <Flex vertical gap='middle'>
+                        <Flex>
+                            <Text strong>Output text</Text>
+                            <Button
+                                type='default'
+                                size='small'
+                                onClick={handleCopyToClipboard}
+                                disabled={!(outputText.length)}
+                                style={{ marginLeft: '20px' }}
+                            >
+                                Copy
+                            </Button>
+                        </Flex>
+                        <TextArea
+                            autoSize={{ minRows: 6, maxRows: 6 }}
+                            disabled
+                            style={{ cursor: 'pointer' }}
+                            value={outputText}
+                            onChange={(e) => setOutputText(e.target.value)}
+                        />
+                    </Flex>
+                    <Collapse
+                        items={[{
+                            key: '1',
+                            label: 'Bytes (output)',
+                            children: (
+                                <TextArea
+                                    autoSize={{ minRows: 6, maxRows: 6 }}
+                                    disabled
+                                    style={{ cursor: 'auto' }}
+                                    value={outputBytes}
+                                />
+                            )
+                        }]}
                     />
                 </Flex>
-                <Collapse
-                    items={[{
-                        key: '1',
-                        label: 'Bytes (output)',
-                        children: (
-                            <TextArea
-                                autoSize={{ minRows: 6, maxRows: 6 }}
-                                disabled
-                                style={{ cursor: 'auto' }}
-                                value={outputBytes}
-                            />
-                        )
-                    }]}
-                />
-            </Flex>
-        </Card>
+            </Card>
+        </div>
     );
 }
 
