@@ -1,13 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import { bytesToString, stringToBytes } from './helpers/bytes';
-import { desx } from './services/desxCrypto';
-import { generateKey } from './services/keyGen';
+import { Flex, Typography } from 'antd';
+import Keys from './components/Keys/Keys';
+import CryptoCard from './components/CryptoCard/CryptoCard';
 
+const { Title } = Typography;
 
 function App() {
-  const plainText = 'apple pie';
+  /* const plainText = 'ddd daddy senior react';
   const key = generateKey();
   const tweak = generateKey();
 
@@ -31,26 +31,35 @@ function App() {
 
   const decryptedText = bytesToString(decryptedBytes);
   console.log('Decrypted Text:', decryptedText);
+ */
 
+  const [key1, setKey1] = useState('')
+  const [key2, setKey2] = useState('')
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Flex vertical justify='flex-start' align='center' gap='large' style={{ margin: '20px 0px 50px 0px' }}>
+      <Title>DESX Cryptography</Title>
+      <Keys
+        key1={key1}
+        key2={key2}
+        setKey1={setKey1}
+        setKey2={setKey2}
+      />
+      <Flex justify='space-between' className='crypto-wrapper' gap='large'>
+        <CryptoCard
+          key1={key1}
+          key2={key2}
+          title='Encrypt'
+          lock={true}
+        />
+        <CryptoCard
+          key1={key1}
+          key2={key2}
+          title='Decrypt'
+        />
+      </Flex>
+    </Flex>
   );
 }
 
