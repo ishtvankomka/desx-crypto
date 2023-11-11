@@ -3,12 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 import { bytesToString, stringToBytes } from './helpers/bytes';
 import { desx } from './services/desxCrypto';
+import { generateKey } from './services/keyGen';
 
 
 function App() {
   const plainText = 'apple pie';
-  const key = 'mysecretkey';
-  const tweak = 'mytweakkey';
+  const key = generateKey();
+  const tweak = generateKey();
+
+  console.log('key:', key);
+  console.log('tweak:', tweak);
+
 
   const plainTextBytes = stringToBytes(plainText);
   const keyBytes = stringToBytes(key);
