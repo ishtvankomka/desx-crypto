@@ -89,7 +89,7 @@ const CryptoCard: React.FC<CryptoCardProps> = ({ title = '', lock = false, key1 
                             size='small'
                             onClick={handleCopyToClipboard}
                             disabled={!(outputText.length)}
-                            style={{marginLeft: '20px'}}
+                            style={{ marginLeft: '20px' }}
                         >
                             Copy
                         </Button>
