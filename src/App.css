@@ -11,13 +11,13 @@
 .keys-card {
   width: 280px;
   @media (min-width: 1000px) {
-    width: 900px;
+    width: 900px !important;
   }
 }
 
 .crypto-card {
   width: 280px;
   @media (min-width: 1000px) {
-    width: 440px;
+    width: 440px !important;
   }
 }
